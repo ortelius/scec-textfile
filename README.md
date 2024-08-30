@@ -1,8 +1,8 @@
-# Ortelius v11 Domain Microservice
+# Ortelius v11 Textfile Microservice
 
 > Version 11.0.0
 
-RestAPI for the Domain Object
+RestAPI for the Readme, License and Swagger objects.  Only for new objects.  Retrieval will be done directly against the db by other microservices.
 ![Release](https://img.shields.io/github/v/release/ortelius/scec-textfile?sort=semver)
 ![license](https://img.shields.io/github/license/ortelius/.github)
 
@@ -17,9 +17,9 @@ RestAPI for the Domain Object
 
 | Method | Path | Description |
 | --- | --- | --- |
-| GET | [/msapi/domain](#getmsapidomain) | Get a List of Domains |
-| POST | [/msapi/domain](#postmsapidomain) | Create a Domain |
-| GET | [/msapi/domain/:key](#getmsapidomainkey) | Get a Domain |
+| POST | [/msapi/license](#postmsapilicense) | Create a License |
+| POST | [/msapi/swagger](#postmsapiswagger) | Create a Swagger |
+| POST | [/msapi/textfile](#postmsapitextfile) | Create a Textfile |
 
 ## Reference Table
 
@@ -30,13 +30,13 @@ RestAPI for the Domain Object
 
 ***
 
-### [GET]/msapi/domain
+### [POST]/msapi/license
 
 - Summary  
-Get a List of Domains
+Create a License
 
 - Description  
-Get a list of domains for the user.
+Create a new License and persist it
 
 #### Responses
 
@@ -44,13 +44,13 @@ Get a list of domains for the user.
 
 ***
 
-### [POST]/msapi/domain
+### [POST]/msapi/swagger
 
 - Summary  
-Create a Domain
+Create a Swagger
 
 - Description  
-Create a new Domain and persist it
+Create a new Swagger and persist it
 
 #### Responses
 
@@ -58,13 +58,13 @@ Create a new Domain and persist it
 
 ***
 
-### [GET]/msapi/domain/:key
+### [POST]/msapi/textfile
 
 - Summary  
-Get a Domain
+Create a Textfile
 
 - Description  
-Get a domain based on the _key or name.
+Create a new Textfile and persist it
 
 #### Responses
 

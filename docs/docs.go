@@ -23,27 +23,9 @@ const docTemplate = `{
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
     "paths": {
-        "/msapi/domain": {
-            "get": {
-                "description": "Get a list of domains for the user.",
-                "consumes": [
-                    "*/*"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "domain"
-                ],
-                "summary": "Get a List of Domains",
-                "responses": {
-                    "200": {
-                        "description": "OK"
-                    }
-                }
-            },
+        "/msapi/license": {
             "post": {
-                "description": "Create a new Domain and persist it",
+                "description": "Create a new License and persist it",
                 "consumes": [
                     "application/json"
                 ],
@@ -51,9 +33,9 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "domain"
+                    "license"
                 ],
-                "summary": "Create a Domain",
+                "summary": "Create a License",
                 "responses": {
                     "200": {
                         "description": "OK"
@@ -61,19 +43,39 @@ const docTemplate = `{
                 }
             }
         },
-        "/msapi/domain/:key": {
-            "get": {
-                "description": "Get a domain based on the _key or name.",
+        "/msapi/swagger": {
+            "post": {
+                "description": "Create a new Swagger and persist it",
                 "consumes": [
-                    "*/*"
+                    "application/json"
                 ],
                 "produces": [
                     "application/json"
                 ],
                 "tags": [
-                    "domain"
+                    "swagger"
                 ],
-                "summary": "Get a Domain",
+                "summary": "Create a Swagger",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/msapi/textfile": {
+            "post": {
+                "description": "Create a new Textfile and persist it",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "textfile"
+                ],
+                "summary": "Create a Textfile",
                 "responses": {
                     "200": {
                         "description": "OK"
@@ -88,10 +90,10 @@ const docTemplate = `{
 var SwaggerInfo = &swag.Spec{
 	Version:          "11.0.0",
 	Host:             "localhost:8080",
-	BasePath:         "/msapi/domain",
+	BasePath:         "/msapi/textfile",
 	Schemes:          []string{},
-	Title:            "Ortelius v11 Domain Microservice",
-	Description:      "RestAPI for the Domain Object\n![Release](https://img.shields.io/github/v/release/ortelius/scec-textfile?sort=semver)\n![license](https://img.shields.io/github/license/ortelius/.github)\n\n![Build](https://img.shields.io/github/actions/workflow/status/ortelius/scec-textfile/build-push-chart.yml)\n[![MegaLinter](https://github.com/ortelius/scec-textfile/workflows/MegaLinter/badge.svg?branch=main)](https://github.com/ortelius/scec-textfile/actions?query=workflow%3AMegaLinter+branch%3Amain)\n![CodeQL](https://github.com/ortelius/scec-textfile/workflows/CodeQL/badge.svg)\n[![OpenSSF-Scorecard](https://api.securityscorecards.dev/projects/github.com/ortelius/scec-textfile/badge)](https://api.securityscorecards.dev/projects/github.com/ortelius/scec-textfile)\n\n![Discord](https://img.shields.io/discord/722468819091849316)",
+	Title:            "Ortelius v11 Textfile Microservice",
+	Description:      "RestAPI for the Readme, License and Swagger objects.  Only for new objects.  Retrieval will be done directly against the db by other microservices.\n![Release](https://img.shields.io/github/v/release/ortelius/scec-textfile?sort=semver)\n![license](https://img.shields.io/github/license/ortelius/.github)\n\n![Build](https://img.shields.io/github/actions/workflow/status/ortelius/scec-textfile/build-push-chart.yml)\n[![MegaLinter](https://github.com/ortelius/scec-textfile/workflows/MegaLinter/badge.svg?branch=main)](https://github.com/ortelius/scec-textfile/actions?query=workflow%3AMegaLinter+branch%3Amain)\n![CodeQL](https://github.com/ortelius/scec-textfile/workflows/CodeQL/badge.svg)\n[![OpenSSF-Scorecard](https://api.securityscorecards.dev/projects/github.com/ortelius/scec-textfile/badge)](https://api.securityscorecards.dev/projects/github.com/ortelius/scec-textfile)\n\n![Discord](https://img.shields.io/discord/722468819091849316)",
 	InfoInstanceName: "swagger",
 	SwaggerTemplate:  docTemplate,
 	LeftDelim:        "{{",
