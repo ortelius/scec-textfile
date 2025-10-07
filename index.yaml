@@ -2,6 +2,17 @@ apiVersion: v1
 entries:
   scec-textfile:
   - apiVersion: v2
+    appVersion: 11.0.1197
+    created: "2025-10-07T05:36:10.94995604Z"
+    description: Domain microservice
+    digest: c1abf75185af85766cba3f5befecb5ae0de50e5343f88f0c4cebf22c8b9af042
+    icon: https://ortelius.github.io/ortelius-charts/logo.png
+    name: scec-textfile
+    type: application
+    urls:
+    - https://github.com/ortelius/scec-textfile/releases/download/scec-textfile-11.0.1197/scec-textfile-11.0.1197.tgz
+    version: 11.0.1197
+  - apiVersion: v2
     appVersion: 11.0.1195
     created: "2025-10-03T05:29:42.524784038Z"
     description: Domain microservice
@@ -4863,4 +4874,4 @@ entries:
     urls:
     - https://github.com/ortelius/scec-textfile/releases/download/scec-textfile-11.0.8/scec-textfile-11.0.8.tgz
     version: 11.0.8
-generated: "2025-10-03T05:29:42.524452591Z"
+generated: "2025-10-07T05:36:10.949631927Z"
